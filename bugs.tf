@@ -1,8 +1,13 @@
-resource "aws_s3_bucket" "s3_bucket" {
-  bucket = "s3backend"
-}
+module "s3_bucket" {
+  source = "terraform-aws-modules/s3-bucket/aws"
 
-resource "aws_s3_bucket_acl" "s3_bucket_acl" {
-  bucket = aws_s3_bucket.s3_bucket.id
+  bucket = "my-s3-bucket"
   acl    = "private"
+
+  control_object_ownership = true
+  object_ownership         = "ObjectWriter"
+
+  versioning = {
+    enabled = true
+  }
 }
