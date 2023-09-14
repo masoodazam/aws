@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "s3_bucket" {
-    bucket = "s3backend"
-    acl = "private"
+resource "aws_s3_bucket" "httpds3" {
+bucket = "raktim-hsttpd-files"
+acl    = "public-read"
 }
