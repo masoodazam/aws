@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "httpds3" {
-  bucket = "raktim-hsttpd-files"
+  bucket = "rastim-hsttpd-files"
 }
 
 resource "aws_s3_bucket_acl" "httpds3_acl" {
