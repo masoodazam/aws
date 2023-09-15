@@ -4,7 +4,6 @@ provider "aws" {
 
 resource "aws_s3_bucket" "httpds3" {
   bucket = "raktim-hsttpd-files"
-  acl    = "public-read"
 }
 
 resource "aws_s3_bucket_acl" "httpds3_acl" {
