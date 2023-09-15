@@ -1,12 +1,6 @@
-provider "aws" {
-  region = "us-east-1"
+resource "aws_iam_user" "Admin-user" {
+name = "lucy"
+tags = {
+  "description" = "Technical Team Lead"
 }
-
-resource "aws_s3_bucket" "httpds3" {
-  bucket = "rastim-hsttpd-files"
-}
-
-resource "aws_s3_bucket_acl" "httpds3_acl" {
-  bucket = aws_s3_bucket.httpds3.id
-  acl    = "public-read"
 }
