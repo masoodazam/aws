@@ -1,6 +1,12 @@
-resource "aws_iam_user" "Admin-user" {
-name = "lucy"
+resource "aws_ec2" "My-ec2" {
+ami = "0f844a9675b22ea32"
+instance_type = "t2.micro"
 tags = {
-  "description" = "Technical Team Lead"
+Name = "ProjectA-webserver"
+}
+lifecycle {
+ignore_changes = [
+ tags,ami
+]
 }
 }
